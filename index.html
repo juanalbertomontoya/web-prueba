@@ -4,10 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no">
-    <title>Un titulo cualquiera</title>
+    <title>Web.site</title>
     <link rel="stylesheet" href="estilos.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="fonts.css" />
 
 </head>
 
@@ -16,7 +17,7 @@
     
     <div id="menufondo">
         <input type="checkbox" id="boton-menu">
-        <label for="boton-menu"><img src="img/boton-menu.png"></label>
+        <label for="boton-menu"><div class="icon-menu"></div></label>
         <div id="menucontenido">
         <div id="logomenu">
             <img src="img/logo.png">
@@ -128,7 +129,22 @@
         <a href="#" class="boton">Boton 1</a>
         
     </div>
+    
+    <div class="boton-flotante">
+    
+    <div class="float-button" id="float-button"></div>
+  <nav class="circular-menu" id="circular-menu">
+    <ul>
+      <li><a class="icon-facebook" href="#"></a></li>
+      <li><a class="icon-instagram" href="#"></a></li>
+      <li><a class="icon-whatsapp" href="#"></a></li>
+    </ul>
+  </nav>
+    
+    </div>
+    
     <script src="javascript.js"></script>
+    <script src="boton.js"></script>
 </body>
 
 </html>

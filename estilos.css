@@ -222,7 +222,7 @@ a{
     font-family: 'Roboto', sans-serif;
 }
 
-ul {
+#botonesmenu ul {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -231,7 +231,7 @@ ul {
     -ms-flex-direction: row;
     flex-direction: row;
 }
-li{
+#botonesmenu li{
     list-style: none;
     margin-left: 10px;
     margin-right: 10px;
@@ -536,22 +536,44 @@ input placeholder {
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
 }
-    li {
+    #menu li {
         margin: 0px
     }
-    li a {
+    #menu li a {
         display: block;
         padding: 20px;
         border-top: 1px solid white;
     }
-    li:hover {
+    #menu li:hover {
         background: #0d2642;
+        -webkit-transition: all 0.7s;
         -webkit-transition: all 1s;
         transition: all 1s;
     }
+    #botonesmenu ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
     
     label {
-        display: block;
+        -ms-flex-line-pack: center;
+        align-content: center;
+        
+        display: -webkit-box;
+        
+        display: -ms-flexbox;
+        
+        display: flex;
+    }
+    label .icon-menu {
+        font-size: 55px;
+        color: white;
+        margin-top: auto;
+        margin-left: 15px
     }
     label:hover {
         cursor: pointer;
@@ -576,4 +598,105 @@ input placeholder {
     .intermedio1-cuadro {
         padding: 40px;
     }
+}
+
+
+/** Boton flotante **/
+
+:root {
+  --animation-time: .3s;
+}
+
+.float-button {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: #1c518e;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 100;
+  cursor: pointer;
+  -webkit-transition: all var(--animation-time);
+  transition: all var(--animation-time);
+}
+
+.float-button::before, .float-button::after {
+  position: absolute;
+  width: 40%;
+  height: 4%;
+  content: " ";
+  top: 49%;
+  left: 30%;
+  background: #fff;
+    z-index: 100;
+}
+.float-button::after {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+.float-button.pulsed {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  background: #12345a;
+}
+
+.circular-menu {
+  position: fixed;
+  width: 16em;
+  height: 16rem;
+  background: #1c518e;
+  bottom: -5.5rem;
+  right: -5.5rem;
+  opacity: 0;
+  border-radius: 50%;
+  -webkit-transition: all var(--animation-time);
+  transition: all var(--animation-time);
+  z-index: 50;
+  -webkit-transform: scale(0) rotate(-180deg);
+  transform: scale(0) rotate(-180deg);
+}
+.circular-menu.expand {
+  -webkit-transform: scale(1) rotate(0);
+          transform: scale(1) rotate(0);
+  opacity: 1;
+}
+.circular-menu.expand {
+  -webkit-transform: scale(1) rotate(0);
+          transform: scale(1) rotate(0);
+  opacity: 1;
+}
+.circular-menu ul li {
+    position: absolute;
+    width: 2rem;
+    height: auto;
+    top: 2rem;
+    left: calc(50% - 1rem);
+    -webkit-transform-origin: center 6rem;
+    transform-origin: center 6rem;
+}
+.circular-menu ul li a {
+    display: block;
+}
+.icon-facebook, .icon-instagram, .icon-whatsapp {
+    font-size: 2rem; 
+}
+
+
+.circular-menu li:nth-child(2) {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+.circular-menu li:nth-child(2) a {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.circular-menu li:nth-child(3) {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+.circular-menu li:nth-child(3) a {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
 }
